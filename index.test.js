@@ -13,7 +13,7 @@ import {
   findSpy,
 } from "./index.js";
 
-describe("getFirst", function () {
+describe.only("getFirst", function () {
   it("returns the first element of a number array", function () {
     expect(getFirst([1, 2, 3])).toBe(1);
   });
@@ -31,7 +31,7 @@ describe("getFirst", function () {
   });
 });
 
-describe("getLast", function () {
+describe.only("getLast", function () {
   it("returns the last element of a number array", function () {
     expect(getLast([1, 2, 3])).toBe(3);
   });
@@ -49,7 +49,7 @@ describe("getLast", function () {
   });
 });
 
-describe("getFirstLast", function () {
+describe.only("getFirstLast", function () {
   it("returns [first, last] for a multi-element array", function () {
     expect(getFirstLast([1, 2, 3])).toEqual([1, 3]);
   });
@@ -67,7 +67,7 @@ describe("getFirstLast", function () {
   });
 });
 
-describe("sharesFirstLetter", function () {
+describe.only("sharesFirstLetter", function () {
   it("returns true if first letters match", function () {
     expect(sharesFirstLetter("apple", "apricot")).toBe(true);
   });
@@ -94,7 +94,7 @@ describe("sharesFirstLetter", function () {
   });
 });
 
-describe("quintuple", function () {
+describe.only("quintuple", function () {
   it("returns a new array with each number multiplied by 5", function () {
     expect(quintuple([1, 2, 3])).toEqual([5, 10, 15]);
   });
@@ -112,7 +112,7 @@ describe("quintuple", function () {
   });
 });
 
-describe("pluralize", function () {
+describe.only("pluralize", function () {
   it("adds 's' to words not ending with 's'", function () {
     expect(pluralize(["cat", "dog"])).toEqual(["cats", "dogs"]);
   });
@@ -133,7 +133,7 @@ describe("pluralize", function () {
   });
 });
 
-describe("countAttendance", function () {
+describe.only("countAttendance", function () {
   it("counts the number of true values", function () {
     expect(countAttendance([true, false, true])).toBe(2);
   });
@@ -154,7 +154,7 @@ describe("countAttendance", function () {
   });
 });
 
-describe("getLongestWord", function () {
+describe.only("getLongestWord", function () {
   it("returns the first longest word", function () {
     expect(getLongestWord(["sphinx", "of", "black", "quartz"])).toBe("sphinx");
   });
@@ -176,7 +176,7 @@ describe("getLongestWord", function () {
 });
 
 // findSong
-describe("findSong", function () {
+describe.only("findSong", function () {
   it("returns the index of the song if found", function () {
     expect(findSong(["A", "B", "C"], "B")).toBe(1);
   });
@@ -198,7 +198,7 @@ describe("findSong", function () {
 });
 
 // findSpy
-describe("findSpy", function () {
+describe.only("findSpy", function () {
   it("returns [0,1] for [[X,spy], [X,X]]", function () {
     expect(
       findSpy([

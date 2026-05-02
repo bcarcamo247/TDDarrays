@@ -10,6 +10,7 @@
  * getFirst([true,false,true]); // true
  */
 export function getFirst(array) {
+  return array[0];
   // TODO
 }
 
@@ -25,6 +26,7 @@ export function getFirst(array) {
  * getLast([true,false,true]); // true
  */
 export function getLast(array) {
+  return array[array.length - 1];
   // TODO
 }
 
@@ -42,6 +44,13 @@ export function getLast(array) {
  * getFirstLast([42]); // [42]
  */
 export function getFirstLast(array) {
+  if (array.length === 0) {
+    return [];
+  }
+  if (array.length === 1) {
+    return array;
+  }
+  return [array[0]], array[array.length - 1];
   // TODO
 }
 
@@ -59,7 +68,11 @@ export function getFirstLast(array) {
  * sharesFirstLetter("cat", "dog"); // false
  */
 export function sharesFirstLetter(str1, str2) {
-  // TODO
+  if (str1 === "" || str2 === "") {
+    return false;
+  } else {
+  return str1[0] === str2[0];
+  }// TODO
 }
 
 /**
@@ -74,6 +87,7 @@ export function sharesFirstLetter(str1, str2) {
  * quintuple([]); // []
  */
 export function quintuple(numbers) {
+  return numbers.map(num => num * 5);
   // TODO
 }
 
@@ -95,8 +109,18 @@ export function quintuple(numbers) {
  * pluralize([]); // []
  */
 export function pluralize(words) {
-  // TODO
+  return words.map(word => {
+    if (word.endsWith("s")) {
+      return word + "es";
+    } else {
+      return word + "s";
+    }
+  });
 }
+
+
+  // TODO
+
 
 /**
  * @param {boolean[]} attendance - an array representing student attendance
@@ -112,6 +136,13 @@ export function pluralize(words) {
  * countAttendance([]); // 0
  */
 export function countAttendance(attendance) {
+  let count = 0;
+  for (const student of attendance) {
+    if (student) {
+      count++;
+    }
+  }
+  return count;
   // TODO
 }
 
@@ -128,8 +159,18 @@ export function countAttendance(attendance) {
  * getLongestWord(["a", "ab", "abc"]); // "abc"
  */
 export function getLongestWord(sentence) {
-  // TODO
+  let longestWord = "";
+  if (!sentence.length) {
+    return null;
+  }
+  for (const word of sentence) {
+    if (word.length > longestWord.length) {
+      longestWord = word;
+    }
+  }
+    return longestWord;
 }
+  // TODO
 
 /**
  * @param {string[]} playlist - an array of song titles
@@ -145,6 +186,12 @@ export function getLongestWord(sentence) {
  * findSong([], "Midnight Drive"); // -1
  */
 export function findSong(playlist, song) {
+  for (let i = 0; i < playlist.length; i++) {
+    if (song === playlist[i]) {
+      return i;
+    }
+  }
+  return -1;
   // TODO
 }
 
@@ -162,5 +209,14 @@ export function findSong(playlist, song) {
  * findSpy([["tree","lamp"],["pigeon","guard"]]); // null
  */
 export function findSpy(map) {
+  let result = null;
+  for (let x = 0; y < map.length; x++) {
+    for (let y = 0; y < map[x].length; y++) {
+      if (map[x][y] === "spy") {
+        result = [x,y];
+      }
+    }
+  }
+  return result;
   // TODO
 }
